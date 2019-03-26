@@ -1,0 +1,10 @@
+from django.conf.urls import url
+
+from .views import post_detail, post_list, category_detail, search
+
+urlpatterns = [
+    url(r'^blog-list/$', post_list, name="post_list")
+    url(r'^results/$', search, name="search"),
+    url(r'^blog-detail/(?P<slug>[-\w]+)/$', post_detail, name='blog_detail')
+    url(r'^category-detail/(?P<slug>[-\w]+)/$', category_detail, name='category_detail')
+]
